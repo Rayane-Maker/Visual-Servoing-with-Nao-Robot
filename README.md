@@ -58,7 +58,7 @@ docker exec -it ue52vs /bin/bash
 Then, execute the script with:
 
 ```sh
-cd vs/py/project && python main.py 60 1 localhost 11212 0.2 0.0 0.0
+cd vs/py/project && python main.py 60 1 localhost 11212 
 ```
 
 or:
@@ -70,7 +70,7 @@ cd vs/py/project && python main.py 600 1
 For subsequent executions:
 
 ```sh
-python main.py 600 1 localhost 11212 0.2 0.0 0.0
+python main.py 600 1 localhost 11212
 ```
 
 or simply:
