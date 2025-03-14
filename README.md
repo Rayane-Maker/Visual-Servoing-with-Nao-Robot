@@ -1,5 +1,5 @@
 # Visual Servoing with Nao Robot
-<img src="./Nao_football_illustr.png" alt="Project illustration" width="800">
+<img src="./pictures/Nao_football_illustr.png" alt="Project illustration" width="800">
 
 ## Project Overview
 This project leverages visual servoing to enable a Nao robot to autonomously score a goal in a virtual environment using V-Rep (CoppeliaSim).
@@ -89,39 +89,39 @@ python main.py 600
 ## Strategy
 | Trajectory (Ex. 1) |  | Trajectory (Ex. 2) |
 |--------------|--|--------------|
-| <img src="./Trajectory.png" width="500"> | | <img src="./Trajectory2.png" width="500"> |
+| <img src="./pictures/Trajectory.png" width="500"> | | <img src="./pictures/Trajectory2.png" width="500"> |
 
 
 
-### 1. Ball Search
+#### 1. Ball Search
 The robot searches for the ball by scanning with its head:
 - First, a circular sweeping motion (left, up, right, down).
 - If the ball is not found, it turns its body to continue the search.
 
-### 2. Alignment with the Ball
+#### 2. Alignment with the Ball
 Once the ball is found:
 - The head visually tracks the ball (fast servoing).
 - Simultaneously, the body aligns with the ball to ensure the head, body, and feet are properly oriented (slow servoing).
 
-### 3. Approaching the Ball
+#### 3. Approaching the Ball
 After alignment:
 - The robot walks straight towards the ball, minimizing the distance to optimize time for the next steps.
 
-### 4. Goal Search
+#### 4. Goal Search
 Using only its head, the robot scans the scene similarly to Step 1 to identify the relative position of the goal (left or right).
 
-### 5. Circular Movement for Goal Alignment
+#### 5. Circular Movement for Goal Alignment
 Depending on the goal’s position:
 - The robot moves laterally in the opposite direction while keeping the head centered on the ball.
 - When the angle between the head and body becomes too large, the robot rotates to realign its body, head, and feet.
 - This process continues until the robot is aligned with both the ball and the goal.
 
-### 6. Shooting
+#### 6. Shooting
 Once properly aligned:
 - The robot attempts to score by walking as straight as possible toward the ball.
 - The lower camera helps track the ball at close range, ensuring lateral corrections for better accuracy.
 
-### 7. Celebration (Not yet implemented)
+#### 7. Celebration (Not yet implemented)
 If the robot scores a goal, it could eventually celebrate its victory.
 
 ---
